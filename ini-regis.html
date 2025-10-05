@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión / Registrarme - Group 15</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1d3c91, #4361ee);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 380px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    h2 {
+      color: #1d3c91;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 95%;
+      background: #1d3c91;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #274bb5;
+    }
+
+    .toggle-text {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .toggle-text a {
+      color: #1d3c91;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .mini-back {
+      display: none;
+      background: #e8f0fe;
+      color: #1d3c91;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="login-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="login-username" placeholder="Nombre de usuario" required>
+    <input type="password" id="login-password" placeholder="Contraseña" required>
+    <button onclick="login()">Entrar</button>
+    <div class="toggle-text">
+      ¿No tienes cuenta? <a onclick="toggleForm()">Regístrate aquí</a>
+    </div>
+  </div>
+
+  <div class="container" id="register-container" style="display:none;">
+    <h2>Registrarme</h2>
+    <input type="text" id="register-username" placeholder="Nombre de usuario" required>
+    <input type="email" id="register-email" placeholder="Correo electrónico" required>
+    <input type="password" id="register-password" placeholder="Contraseña" required>
+    <button onclick="register()">Crear cuenta</button>
+    <div class="toggle-text">
+      ¿Ya tienes cuenta? <a onclick="toggleForm()">Inicia sesión aquí</a>
+    </div>
+    <div class="mini-back" id="mini-back">✅ Registro exitoso. ¡Ya puedes iniciar sesión!</div>
+  </div>
+
+  <script>
+  
+    function toggleForm() {
+      const loginContainer = document.getElementById('login-container');
+      const registerContainer = document.getElementById('register-container');
+      loginContainer.style.display = loginContainer.style.display === 'none' ? 'block' : 'none';
+      registerContainer.style.display = registerContainer.style.display === 'none' ? 'block' : 'none';
+    }
+
+   
+    function register() {
+      const username = document.getElementById('register-username').value.trim();
+      const email = document.getElementById('register-email').value.trim();
+      const password = document.getElementById('register-password').value.trim();
+
+      if (username && email && password) {
+       
+        const userData = { username, email, password };
+        localStorage.setItem('usuarioData', JSON.stringify(userData));
+
+        
+        document.getElementById('mini-back').classList.add('visible');
+
+        
+        setTimeout(() => {
+          toggleForm();
+          document.getElementById('mini-back').classList.remove('visible');
+        }, 2000);
+      } else {
+        alert('Por favor completa todos los campos.');
+      }
+    }
+
+
+    function login() {
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+
+      const storedUser = JSON.parse(localStorage.getItem('usuarioData'));
+
+      if (storedUser && username === storedUser.username && password === storedUser.password) {
+        localStorage.setItem('usuario', username);
+        window.location.href = 'index.html';
+      } else {
+        alert('Usuario o contraseña incorrectos.');
+      }
+    }
+  </script>
+
+</body>
+</html>
