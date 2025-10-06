@@ -83,12 +83,12 @@ body {
 
 .btn-outline:hover {
   background-color: white;
-  color: #1d3c91;
+  color: #0B495B;
 }
 
 /* Primary */
 .btn-primary {
-  background-color: #ffcd00;
+  background-color: #4400ff;
   color: #000000;
 }
 
