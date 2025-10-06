@@ -10,6 +10,8 @@ body {
   background-color: #f4f6fa;
   color: #030303;
   line-height: 1.6;
+  background-image: url("images/fondo.jpg");
+
 }
 
 /* ===== NAVBAR ===== */
@@ -87,9 +89,9 @@ body {
   color: #000000;
 }
 
-/* ===== HERO SECTION ===== */.hero {
-  background: 
-    url("../images/fondo.png") center/cover no-repeat;
+/* ===== HERO SECTION ===== */
+.hero {
+  background: url("../images/fondo.png") center/cover no-repeat;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 100px 20px;
