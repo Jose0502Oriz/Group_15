@@ -89,29 +89,6 @@ body {
   color: #000000;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 100px 20px;
-}
-
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-}
-
-.hero-content .btn-primary {
-  font-size: 1rem;
-  padding: 10px 25px;
-}
-
 /* ===== ABOUT SECTION ===== */
 .about {
   display: flex;
