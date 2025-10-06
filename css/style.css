@@ -54,12 +54,7 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #ffcd00;
-}
 
-/* ===== BOTONES DE AUTENTICACIÓN ===== */
 .auth-buttons {
   display: flex;
   gap: 10px;
@@ -91,7 +86,6 @@ body {
   background-color: #4400ff;
   color: #000000;
 }
-
 
 /* ===== HERO SECTION ===== */.hero {
   background: 
