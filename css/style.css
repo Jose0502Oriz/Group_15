@@ -89,84 +89,28 @@ body {
   color: #000000;
 }
 
-/* HERO SECTION */
+/* ===== HERO SECTION ===== */
 .hero {
-  background-image: url("../images/Fondo.png"); /* Usa el nombre exacto */
-  background-size: cover;         
-  background-position: center;    
-  background-repeat: no-repeat;   
-  background-attachment: fixed;   
-  height: 100vh;                  
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: rgb(0, 0, 0);
   text-align: center;
-  color: white;
-  position: relative;
+  padding: 100px 20px;
 }
 
-/* Capa semitransparente para contraste */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-/* BOTÓN PRINCIPAL */
-.btn-primary {
-  background-color: #0E5966 !important;
-  color: white !important;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 6px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-weight: bold;
+.hero-content .btn-primary {
+  font-size: 1rem;
+  padding: 10px 25px;
 }
-
-.btn-primary:hover {
-  background-color: #138496 !important;
-  transform: scale(1.05);
-}
-
-/* BOTONES DEL NAV (Iniciar Sesión / Registrarme) */
-nav .login-btn {
-  background-color: transparent;
-  border: 2px solid #0E5966;
-  color: #0E5966;
-  padding: 8px 18px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-nav .login-btn:hover {
-  background-color: #0E5966;
-  color: white;
-}
-
-nav .register-btn {
-  background-color: #0E5966 !important;
-  color: white !important;
-  padding: 8px 18px;
-  border-radius: 6px;
-  border: none !important;
-  transition: background-color 0.3s ease;
-}
-
-nav .register-btn:hover {
-  background-color: #138496 !important;
-}
-
 
 /* ===== ABOUT SECTION ===== */
 .about {
